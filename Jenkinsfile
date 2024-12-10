@@ -48,8 +48,8 @@ pipeline {
                 sh '''
                     npm install netlify-cli -g
                     netlify --version
-
                 '''
+            }
         
     }
     post {
