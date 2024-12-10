@@ -23,6 +23,7 @@ pipeline {
         }
 
         stage('Tests') {
+            stages {
                 stage('Unit tests') {
                     agent {
                         docker {
@@ -43,6 +44,8 @@ pipeline {
                         }
                     }
                 }
+            }
+        }
 
         stage('Deploy') {
             agent {
@@ -58,5 +61,6 @@ pipeline {
                 '''
             }
         }
-    }
-}
+
+    } // Close stages block
+} // Close pipeline block
